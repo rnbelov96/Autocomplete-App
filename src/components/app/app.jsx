@@ -6,7 +6,7 @@ import { AppActionCreators } from '@/reducer/app/app';
 
 function AutoComplete({ inputValue, onChange, suggestions }) {
   return (
-    <>
+    <div className="container">
       <div className="auto-complete">
         <h1 className="auto-complete__title">Auto Complete</h1>
         <input
@@ -29,7 +29,7 @@ function AutoComplete({ inputValue, onChange, suggestions }) {
         </ul>
       </div>
       <div className="auto-complete__suggestions-count">{`Suggestions: ${suggestions.length}`}</div>
-    </>
+    </div>
   );
 }
 
