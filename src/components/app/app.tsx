@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { Dispatch } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getInputValue, getSuggestions } from '@/reducer/app/selectors';
 import { AppActionCreators } from '@/reducer/app/app';
+import { AppPropsType } from '@/types/components/app';
+import { FullStateType } from '@/types/general-types';
+import { AppActionType } from '@/types/redux/app-reducer';
 
-const AutoComplete = ({ inputValue, onChange, suggestions }) => (
+const AutoComplete: React.FunctionComponent<AppPropsType> = ({ inputValue, onInputChange, suggestions }) => (
   <div className="container">
     <div className="auto-complete">
       <h1 className="auto-complete__title">Auto Complete</h1>
@@ -13,7 +16,7 @@ const AutoComplete = ({ inputValue, onChange, suggestions }) => (
         type="text"
         value={inputValue}
         onChange={e => {
-          onChange(e.target.value);
+          onInputChange(e.target.value);
         }}
       />
       <ul
@@ -31,19 +34,13 @@ const AutoComplete = ({ inputValue, onChange, suggestions }) => (
   </div>
 );
 
-AutoComplete.propTypes = {
-  inputValue: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  suggestions: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
-
-const mapStateToProps = state => ({
+const mapStateToProps = (state: FullStateType) => ({
   suggestions: getSuggestions(state),
   inputValue: getInputValue(state),
 });
 
-const mapDispatchToProps = dispatch => ({
-  onChange: data => {
+const mapDispatchToProps = (dispatch: Dispatch<AppActionType>) => ({
+  onInputChange: (data: string) => {
     dispatch(AppActionCreators.changeInput(data));
     dispatch(AppActionCreators.findMatch());
   },
