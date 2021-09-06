@@ -7,7 +7,7 @@ import { AppPropsType } from '@/types/components/app';
 import { FullStateType } from '@/types/general-types';
 import { AppActionType } from '@/types/redux/app-reducer';
 
-const AutoComplete: React.FunctionComponent<AppPropsType> = ({ inputValue, onInputChange, suggestions }) => (
+export const PureApp: React.FunctionComponent<AppPropsType> = ({ inputValue, onInputChange, suggestions }) => (
   <div className="container">
     <div className="auto-complete">
       <h1 className="auto-complete__title">Auto Complete</h1>
@@ -46,4 +46,4 @@ const mapDispatchToProps = (dispatch: Dispatch<AppActionType>) => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(AutoComplete);
+export const App = connect(mapStateToProps, mapDispatchToProps)(PureApp);
