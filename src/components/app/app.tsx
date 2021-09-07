@@ -1,8 +1,8 @@
 import React, { Dispatch } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getInputValue, getSuggestions } from '@/reducer/app/selectors';
-import { AppActionCreators } from '@/reducer/app/app';
+import { getInputValue, getSuggestions } from '@/redux/app/selectors';
+import { AppActionCreators } from '@/redux/app/app-reducer';
 import { AppPropsType } from '@/types/components/app';
 import { FullStateType } from '@/types/general-types';
 import { AppActionType } from '@/types/redux/app-reducer';
