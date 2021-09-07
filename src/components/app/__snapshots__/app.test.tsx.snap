@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render initial screen 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="auto-complete"
+  >
+    <h1
+      className="auto-complete__title"
+    >
+      Auto Complete
+    </h1>
+    <input
+      className="auto-complete__input"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <ul
+      className="auto-complete__suggestions"
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    />
+  </div>
+  <div
+    className="auto-complete__suggestions-count"
+  >
+    Suggestions: 0
+  </div>
+</div>
+`;
+
+exports[`App should render screen with results 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="auto-complete"
+  >
+    <h1
+      className="auto-complete__title"
+    >
+      Auto Complete
+    </h1>
+    <input
+      className="auto-complete__input"
+      onChange={[Function]}
+      type="text"
+      value="R"
+    />
+    <ul
+      className="auto-complete__suggestions"
+      style={Object {}}
+    >
+      <li
+        className="auto-complete__suggestions-item"
+      >
+        Russian
+      </li>
+      <li
+        className="auto-complete__suggestions-item"
+      >
+        Romania
+      </li>
+    </ul>
+  </div>
+  <div
+    className="auto-complete__suggestions-count"
+  >
+    Suggestions: 2
+  </div>
+</div>
+`;
