@@ -1,6 +1,5 @@
 import React, { Dispatch } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { getInputValue, getSuggestions } from '@/redux/app/selectors';
 import { AppActionCreators } from '@/redux/app/app-reducer';
 import { AppPropsType } from '@/types/components/app';
